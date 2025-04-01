@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',
     'rest_framework',
+    'coreapi',
     'tasks'
 ]
 
@@ -128,7 +129,11 @@ STATIC_URL = 'static/'
 #DEFAULT_AUTO_FIELD = 'django.db.models.BigPYTAutoField'
 DEFAULT_AUTO_FIELD='django.db.models.AutoField' 
 
-
-
-CORS_ALLOWED_ORIGINS = [ ]
+#url que tiene autorizacion
+CORS_ALLOWED_ORIGINS = ["http://localhost:5173"]
 #usuario carolina contraseña carolina :)
+
+#REST_FRAMEWORK = {"DEFAULT_SCHEMA_CLASS": "rest_framework.schemas.coreapi.AutoSchema",}
+REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'
+}
